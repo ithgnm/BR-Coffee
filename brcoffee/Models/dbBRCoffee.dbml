@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="brcoffee" Class="dbBRCoffeeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=HP;Initial Catalog=brcoffee;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="brcoffeeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.bill" Member="bills">
+    <Type Name="bill">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="payment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idcustomer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="bill_billinfo" Member="billinfos" ThisKey="id" OtherKey="idbill" Type="billinfo" />
+      <Association Name="customer_bill" Member="customer" ThisKey="idcustomer" OtherKey="id" Type="customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.drink" Member="drinks">
+    <Type Name="drink">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idcategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="picture" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="describe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="drink_billinfo" Member="billinfos" ThisKey="id" OtherKey="iddrink" Type="billinfo" />
+      <Association Name="category_drink" Member="category" ThisKey="idcategory" OtherKey="id" Type="category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.billinfo" Member="billinfos">
+    <Type Name="billinfo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idbill" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iddrink" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="drink_billinfo" Member="drink" ThisKey="iddrink" OtherKey="id" Type="drink" IsForeignKey="true" />
+      <Association Name="bill_billinfo" Member="bill" ThisKey="idbill" OtherKey="id" Type="bill" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.category" Member="categories">
+    <Type Name="category">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="category_drink" Member="drinks" ThisKey="id" OtherKey="idcategory" Type="drink" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer" Member="customers">
+    <Type Name="customer">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fullname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="phonenumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="borndate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="customer_bill" Member="bills" ThisKey="id" OtherKey="idcustomer" Type="bill" />
+    </Type>
+  </Table>
+  <Table Name="dbo.news" Member="news">
+    <Type Name="news">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="author" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="source" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="subtitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="content1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="picture1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="content2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="picture2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="content3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="picture3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="topic" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.account" Member="accounts">
+    <Type Name="account">
+      <Column Name="username" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="displayname" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,16 @@
+﻿@using brcoffee.Models
+
+@{
+    customer customer = (customer)Session["customer"];
+}
+
+<li class="nav-item">
+    @if (Session["customer"] != null)
+    {
+        <a class="nav-link" href="@Url.Action("Logout", "User")">@ViewBag.fullName</a>
+    }
+    else
+    {
+        <a class="nav-link" href="@Url.Action("Login", "User")">@ViewBag.fullName</a>
+    }
+</li>

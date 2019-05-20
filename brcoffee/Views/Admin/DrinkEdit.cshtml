@@ -1,0 +1,67 @@
+﻿@model brcoffee.Models.drink
+
+@{
+    ViewBag.Title = "BR Studio & Coffee";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container my-3">
+    <h2>Edit @ViewBag.drinkName</h2>
+    @using (Html.BeginForm("DrinkEdit", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <hr>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.id)
+            <div class="form-group">
+                @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.idcategory, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.DropDownList("idcategory", (IEnumerable<SelectListItem>)ViewBag.id, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.picture, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    <img src="~/Resources/Drink/@ViewBag.picture" width="400">
+                    <input type="file" name="fileupload" class="ml-5">
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.describe, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    <textarea name="describe">@ViewBag.describe</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.date, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    <input type="date" name="date" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 text-center">
+                    <input type="submit" value="Save an Edit" class="btn btn-primary my-3">
+                </div>
+            </div>
+        </div>
+    }
+    <hr>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>

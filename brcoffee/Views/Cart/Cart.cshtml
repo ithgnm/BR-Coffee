@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "BR Studio & Coffee";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length) { @input }
+    else { @input.Substring(0, length)<text>...</text> }
+}
+
+<div class="container my-5">
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                <th scope="col" width="20%"></th>
+                <th scope="col" width="35%">Product</th>
+                <th scope="col" width="15%" class="text-center">Quantity</th>
+                <th scope="col" width="15%" class="text-center">Price</th>
+                <th width="7%"></th>
+                <th width="7%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="align-middle">
+                    <td class="text-center align-middle">
+                        <img src="~/Resources/Drink/@item.Picture" class="img-reponsive" width="100">
+                    </td>
+                    <td class="align-middle">
+                        <div scope="row" class="row">
+                            <div class="col">
+                                <h4>@item.Name</h4>
+                                <p>@Truncate(@item.Describe, 100)</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="align-middle" data-th="Quantity">
+                        <input type="text" class="form-control text-center" value="@item.Count">
+                    </td>
+                    <td class="text-center align-middle" data-th="Price">@item.Price đ</td>
+                    <td class="text-center align-middle">
+                        <a href="@Url.Action("DrinkDetail", "BRCoffee", new { id = item.ID })">Detail</a>
+                    </td>
+                    <td class="text-center align-middle">
+                        @Html.ActionLink("Remove", "removeCart", new { @id = item.ID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td class="text-right align-middle"><strong>Total:</strong></td>
+                <td class="text-center align-middle"><strong>@ViewBag.totalCount</strong></td>
+                <td class="text-center align-middle"><strong>@ViewBag.totalPrice đ</strong></td>
+                <td colspan="2">
+                    <a href="@Url.Action("Order", "Cart")" class="btn btn-success btn-block align-middle">Order</a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

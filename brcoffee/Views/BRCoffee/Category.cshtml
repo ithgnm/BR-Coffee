@@ -1,0 +1,11 @@
+﻿@model IEnumerable<brcoffee.Models.category>
+
+<div class="col-lg-3">
+    <h2 class="my-4">Menu</h2>
+    <div class="list-group">
+        @foreach (var item in Model)
+        {
+        <a href="@Url.Action("DrinkByCategory", "BRCoffee", new { id = item.id })" class="list-group-item">@item.name</a>
+        }
+    </div>
+</div>

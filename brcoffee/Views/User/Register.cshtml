@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "BR Studio & Coffee";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link href="~/Assets/Admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="~/Assets/Admin/css/sb-admin.css" rel="stylesheet">
+
+<div class="container my-5">
+    <div class="card card-register mx-auto">
+        <div class="card-header">Register an Account</div>
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="text" name="fullName" id="fullName" class="form-control" placeholder="Full Name" required="required" autofocus="autofocus">
+                        <label for="fullName">Full Name</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="text" name="userName" id="userName" class="form-control" placeholder="User name" required="required" autofocus="autofocus">
+                        <label for="userName">User name</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
+                        <label for="inputEmail">Email address</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                                <label for="inputPassword">Password</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="password" name="confirm" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
+                                <label for="confirmPassword">Confirm password</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="text" name="address" id="inputAddress" class="form-control" placeholder="Address" required="required">
+                        <label for="inputAddress">Address</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="text" name="phoneNumber" id="inputPhone" class="form-control" placeholder="Phone Number" required="required">
+                                <label for="inputPhone">Phone Number</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="date" name="bornDate" id="inputDate" class="form-control" placeholder="Date of Birth" required="required">
+                                <label for="inputDate">Date of Birth</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input class="btn btn-primary btn-block" type="submit" value="Register"></input>
+            }
+            <div class="text-center">
+                <a class="d-block small mt-3" href="@Url.Action("Login", "User")">Login Page</a>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Action("ListNews", "News")
+<script src="~/Assets/Admin/vendor/jquery/jquery.min.js"></script>
+<script src="~/Assets/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/Assets/Admin/vendor/jquery-easing/jquery.easing.min.js"></script>

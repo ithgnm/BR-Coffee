@@ -1,0 +1,38 @@
+﻿@model IEnumerable<brcoffee.Models.drink>
+
+@{
+    ViewBag.Title = "BR Studio & Coffee";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length) {@input }
+    else { @input.Substring(0, length)<text>...</text> }
+}
+
+@Html.Action("Category", "BRCoffee")
+<div class="col-lg-9">
+    @Html.Partial("_Carousel")
+    <div class="row">
+        @foreach (var drink in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="@Url.Action("DrinkDetail", "BRCoffee", new { id = drink.id })"><img class="card-img-top" src="~/Resources/Drink/@drink.picture" alt="@drink.name"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="@Url.Action("DrinkDetail", "BRCoffee", new { id = drink.id })">@drink.name</a>
+                        </h4>
+                        <h5>@drink.price đ</h5>
+                        <p class="card-text">@Truncate(@drink.describe, 100)</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@Html.Action("ListNews", "News")

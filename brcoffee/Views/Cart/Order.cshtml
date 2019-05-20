@@ -1,0 +1,98 @@
+﻿@using brcoffee.Models
+@model List<Cart>
+
+@{
+    ViewBag.Title = "BR Studio & Coffee";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    customer customer = (customer)Session["customer"];
+    int count = 1;
+}
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length) { @input }
+    else { @input.Substring(0, length)<text>...</text> }
+}
+
+
+<div class="container py-4">
+    <div class="card">
+        <div class="card-header">
+            Invoice <b><em>@DateTime.Now.ToShortDateString()</em></b>
+            <span class="float-right"> <strong>Status:</strong> Pending</span>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <div class="card-body">
+                <div class="row mb-4">
+                    <div class="col-sm-6">
+                        <h6 class="mt-1"><em>From:</em></h6>
+                        <div><strong>BR Studio & Coffee</strong></div>
+                        <div>276 Dien Bien Phu</div>
+                        <div>HCM City, Vietnam</div>
+                        <div>brstudiocoffee@gmail.com</div>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <h6 class="mt-1"><em>To:</em></h6>
+                        <div><strong>@customer.fullname</strong></div>
+                        <div>@customer.address</div>
+                        <div>Email: @customer.email</div>
+                        <div>Phone: @customer.phonenumber</div>
+                    </div>
+                </div>
+                <div class="table-responsive-sm">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="5%" class="border-0 text-center">#</th>
+                                <th width="15%" class="border-0">Item</th>
+                                <th width="40%" class="border-0">Description</th>
+                                <th width="10%" class="border-0 text-center">Qty</th>
+                                <th width="10%" class="border-0 text-center">Unit Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="text-center">@count</td>
+                                    <td>@item.Name</td>
+                                    <td>@Truncate(@item.Describe, 150)</td>
+                                    <td class="text-center">@item.Count</td>
+                                    <td class="text-center">@item.Price đ</td>
+                                </tr>
+                                count++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 col-sm-5"></div>
+                    <div class="col-lg-5 col-sm-5 ml-auto">
+                        <table class="table table-clear">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>Grand Total</strong>
+                                    </td>
+                                    <td>
+                                        <strong>@ViewBag.totalCount</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <strong>@ViewBag.totalPrice đ</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row text-right">
+                    <div class="col-5 d-none d-lg-block"></div>
+                    <div class="col"><a href="@Url.Action("Cart", "Cart")" class="btn btn-light btn-block">Back to Cart</a></div>
+                    <div class="col"><input type="submit" class="btn btn-primary btn-block" value="Confirm Order"></input></div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

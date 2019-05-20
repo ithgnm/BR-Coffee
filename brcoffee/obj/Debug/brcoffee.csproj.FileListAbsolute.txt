@@ -1,0 +1,98 @@
+D:\brcoffee\brcoffee\bin\brcoffee.dll.config
+D:\brcoffee\brcoffee\bin\brcoffee.dll
+D:\brcoffee\brcoffee\bin\brcoffee.pdb
+D:\brcoffee\brcoffee\bin\roslyn\csc.exe
+D:\brcoffee\brcoffee\bin\roslyn\csc.exe.config
+D:\brcoffee\brcoffee\bin\roslyn\csc.rsp
+D:\brcoffee\brcoffee\bin\roslyn\csi.exe
+D:\brcoffee\brcoffee\bin\roslyn\csi.rsp
+D:\brcoffee\brcoffee\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\brcoffee\brcoffee\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\brcoffee\brcoffee\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\brcoffee\brcoffee\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\brcoffee\brcoffee\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\brcoffee\brcoffee\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\brcoffee\brcoffee\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\brcoffee\brcoffee\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\brcoffee\brcoffee\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\brcoffee\brcoffee\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\brcoffee\brcoffee\bin\roslyn\System.AppContext.dll
+D:\brcoffee\brcoffee\bin\roslyn\System.Collections.Immutable.dll
+D:\brcoffee\brcoffee\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\brcoffee\brcoffee\bin\roslyn\System.IO.FileSystem.dll
+D:\brcoffee\brcoffee\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\brcoffee\brcoffee\bin\roslyn\System.Reflection.Metadata.dll
+D:\brcoffee\brcoffee\bin\roslyn\vbc.exe
+D:\brcoffee\brcoffee\bin\roslyn\vbc.exe.config
+D:\brcoffee\brcoffee\bin\roslyn\vbc.rsp
+D:\brcoffee\brcoffee\bin\roslyn\VBCSCompiler.exe
+D:\brcoffee\brcoffee\bin\roslyn\VBCSCompiler.exe.config
+D:\brcoffee\brcoffee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\brcoffee\brcoffee\bin\Microsoft.Web.Infrastructure.dll
+D:\brcoffee\brcoffee\bin\System.Web.Helpers.dll
+D:\brcoffee\brcoffee\bin\System.Web.Mvc.dll
+D:\brcoffee\brcoffee\bin\System.Web.Razor.dll
+D:\brcoffee\brcoffee\bin\System.Web.Webpages.Deployment.dll
+D:\brcoffee\brcoffee\bin\System.Web.Webpages.dll
+D:\brcoffee\brcoffee\bin\System.Web.Webpages.Razor.dll
+D:\brcoffee\brcoffee\bin\System.Web.Razor.xml
+D:\brcoffee\brcoffee\bin\System.Web.Webpages.xml
+D:\brcoffee\brcoffee\bin\System.Web.Webpages.Deployment.xml
+D:\brcoffee\brcoffee\bin\System.Web.Webpages.Razor.xml
+D:\brcoffee\brcoffee\bin\System.Web.Helpers.xml
+D:\brcoffee\brcoffee\bin\System.Web.Mvc.xml
+D:\brcoffee\brcoffee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\brcoffee\brcoffee\obj\Debug\brcoffee.csprojAssemblyReference.cache
+D:\brcoffee\brcoffee\obj\Debug\brcoffee.csproj.CoreCompileInputs.cache
+D:\brcoffee\brcoffee\obj\Debug\brcoffee.csproj.CopyComplete
+D:\brcoffee\brcoffee\obj\Debug\brcoffee.dll
+D:\brcoffee\brcoffee\obj\Debug\brcoffee.pdb
+D:\asp.net mvc brcoffee\brcoffee\bin\brcoffee.dll.config
+D:\asp.net mvc brcoffee\brcoffee\bin\brcoffee.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\brcoffee.pdb
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\csc.exe
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\csc.exe.config
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\csc.rsp
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\csi.exe
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\csi.rsp
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\System.AppContext.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\System.Collections.Immutable.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\System.IO.FileSystem.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\System.Reflection.Metadata.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\vbc.exe
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\vbc.exe.config
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\vbc.rsp
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\VBCSCompiler.exe
+D:\asp.net mvc brcoffee\brcoffee\bin\roslyn\VBCSCompiler.exe.config
+D:\asp.net mvc brcoffee\brcoffee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\Microsoft.Web.Infrastructure.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Helpers.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Mvc.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Razor.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Webpages.Deployment.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Webpages.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Webpages.Razor.dll
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Razor.xml
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Webpages.xml
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Webpages.Deployment.xml
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Webpages.Razor.xml
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Helpers.xml
+D:\asp.net mvc brcoffee\brcoffee\bin\System.Web.Mvc.xml
+D:\asp.net mvc brcoffee\brcoffee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\asp.net mvc brcoffee\brcoffee\obj\Debug\brcoffee.csprojAssemblyReference.cache
+D:\asp.net mvc brcoffee\brcoffee\obj\Debug\brcoffee.csproj.CoreCompileInputs.cache
+D:\asp.net mvc brcoffee\brcoffee\obj\Debug\brcoffee.csproj.CopyComplete
+D:\asp.net mvc brcoffee\brcoffee\obj\Debug\brcoffee.dll
+D:\asp.net mvc brcoffee\brcoffee\obj\Debug\brcoffee.pdb

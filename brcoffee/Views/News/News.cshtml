@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "BR Studio & Coffee";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-2 d-none d-md-block"></div>
+        <div class="center-block col">
+            <div class="text-right">
+                <h2>@Model.topic</h2>
+                <p class="font-italic">Copyright <b>@Model.author</b> from <b>@Model.source</b></p>
+            </div>
+            <hr>
+            <h3 class="text-left">@Model.title</h3>
+            <div class="text-center my-4"><img class="img-responsive" src="~/Resources/News/@Model.picture1" width="724"></div>
+            <p class="text-justify">@Model.content1</p>
+            <div class="text-center my-4"><img class="img-responsive" src="~/Resources/News/@Model.picture2" width="724"></div>
+            <p class="text-justify">@Model.content2</p>
+            <h5>@Model.subtitle</h5>
+            <p class="text-justify">@Model.content3</p>
+            <hr>
+        </div>
+        <div class="col-2 d-none d-md-block"></div>
+    </div>
+    
+</div>
