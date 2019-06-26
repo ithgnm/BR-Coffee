@@ -20,6 +20,8 @@ namespace brcoffee.Controllers
 
         public ActionResult Register()
         {
+            if (Session["customer"] != null)
+                return RedirectToAction("About", "User");
             return View();
         }
 
@@ -48,6 +50,8 @@ namespace brcoffee.Controllers
                 data.SubmitChanges();
                 return RedirectToAction("Login");
             }
+            ViewBag.alert = "Register error, try again!";
+            ViewBag.alertStyle = "alert alert-warning";
             return this.Register();
         }
 
@@ -55,6 +59,8 @@ namespace brcoffee.Controllers
 
         public ActionResult Login()
         {
+            if (Session["customer"] != null)
+                return RedirectToAction("Index", "BRCoffee");
             return View();
         }
 
@@ -68,6 +74,8 @@ namespace brcoffee.Controllers
                 Session["customer"] = customer;
                 return RedirectToAction("Index", "BRCoffee");
             }
+            ViewBag.alert = "Login error, try again!";
+            ViewBag.alertStyle = "alert alert-warning";
             return View();
         }
 
@@ -86,6 +94,59 @@ namespace brcoffee.Controllers
         {
             Session["customer"] = null;
             return RedirectToAction("Index", "BRCoffee");
+        }
+
+        public ActionResult About()
+        {
+            if (Session["customer"] == null)
+                return RedirectToAction("Login", "User");
+            customer customer = (customer)Session["customer"];
+            return View(customer);
+        }
+
+        [HttpPost]
+
+        public ActionResult About(FormCollection collection, customer customer)
+        {
+            customer cus = (customer)Session["customer"];
+            customer = data.customers.SingleOrDefault(c => c.id == cus.id);
+            var fullName = collection["fullName"];
+            var email = collection["email"];
+            var current = collection["current"];
+            var password = collection["newpass"];
+            var confirm = collection["confirm"];
+            var address = collection["address"];
+            var phoneNumber = collection["phoneNumber"];
+            var bornDate = String.Format("{0:mm/dd/yyyy}", collection["bornDate"]);
+            if (cus.password.Equals(current))
+            {
+                customer.fullname = fullName;
+                customer.username = cus.username;
+                customer.email = email;
+                customer.address = address;
+                customer.phonenumber = phoneNumber;
+                if (password != null || password != "")
+                {
+                    if (password.Equals(confirm)) customer.password = password;
+                    else
+                    {
+                        ViewBag.alert = "Wrong confirm password!";
+                        ViewBag.alertStyle = "alert alert-warning";
+                        return this.About();
+                    }
+                }
+                UpdateModel(customer);
+                data.SubmitChanges();
+                Session["customer"] = customer;
+                ViewBag.alert = "Update profile complete!";
+                ViewBag.alertStyle = "alert alert-success";
+            }
+            else
+            {
+                ViewBag.alert = "Wrong password!";
+                ViewBag.alertStyle = "alert alert-warning";
+            }
+            return this.About();
         }
     }
 }

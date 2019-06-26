@@ -79,7 +79,7 @@
                                     <td>
                                         <strong>@ViewBag.totalCount</strong>
                                     </td>
-                                    <td class="text-right">
+                                    <td class="text-center">
                                         <strong>@ViewBag.totalPrice đ</strong>
                                     </td>
                                 </tr>
@@ -90,7 +90,31 @@
                 <div class="row text-right">
                     <div class="col-5 d-none d-lg-block"></div>
                     <div class="col"><a href="@Url.Action("Cart", "Cart")" class="btn btn-light btn-block">Back to Cart</a></div>
-                    <div class="col"><input type="submit" class="btn btn-primary btn-block" value="Confirm Order"></input></div>
+
+                    <div class="col">
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter">
+                            Confirm Order
+                        </button>
+                    </div>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Order Summary</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body text-left">
+                                    <h6>Thank you for your order!</h6>
+                                    <p>Your order will be confirmed as soon as you click Cofirm button.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="col"><input type="submit" class="btn btn-primary" value="Confirm"/></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         }

@@ -21,9 +21,9 @@
                     <a href="@Url.Action("DrinkDetail", "BRCoffee", new { id = drink.id })"><img class="card-img-top" src="~/Resources/Drink/@drink.picture" alt="@drink.name"></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="@Url.Action("DrinkDetail", "BRCoffee", new { id = drink.id })">@drink.name</a>
+                            <a class="text-dark" href="@Url.Action("DrinkDetail", "BRCoffee", new { id = drink.id })">@drink.name</a>
                         </h4>
-                        <h5>@drink.price đ</h5>
+                        <h5 class="text-danger">@drink.price đ</h5>
                         <p class="card-text">@Truncate(@drink.describe, 100)</p>
                     </div>
                     <div class="card-footer">

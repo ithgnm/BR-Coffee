@@ -1,0 +1,51 @@
+﻿@model IEnumerable<brcoffee.Models.account>
+
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Admin</h2>
+<div class="card mb-3">
+    <div class="card-header">
+        <em>@Html.ActionLink("Create New", "AccountCreate")</em>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Display Name</th>
+                        <th>User Name</th>
+                        <th>Password</th>
+                        <th>Type</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.displayname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.password)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.type)
+                        </td>
+                        <td>
+                            <em>@Html.ActionLink("Edit", "Edit", new { id = item.username })</em> |
+                            <em>@Html.ActionLink("Delete", "Delete", new { id = item.username })</em>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

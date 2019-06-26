@@ -1,0 +1,64 @@
+﻿@model IEnumerable<brcoffee.Models.customer>
+
+@{
+    ViewBag.Title = "BR Studio & Coffee";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Customer</h2>
+<div class="card mb-3">
+    <div class="card-header">
+        <em>@Html.ActionLink("Create New", "CustomerCreate")</em>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>User Name</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Date of Birth</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.fullname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.username)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.password)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.phonenumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.borndate)
+                            </td>
+                            <td>
+                                <em>@Html.ActionLink("Edit", "Edit", new { id = item.id })</em> |
+                                <em>@Html.ActionLink("Delete", "Delete", new { id = item.id })</em>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

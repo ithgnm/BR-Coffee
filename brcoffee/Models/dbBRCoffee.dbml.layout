@@ -32,7 +32,7 @@
         <elementListCompartment Id="e4d75a29-008b-49b4-b591-b2fa4db7ace6" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 7.04250325520833); (7.03125 : 7.04250325520833); (7.03125 : 3.02089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 7.04250325520833); (7.03125 : 7.04250325520833); (7.03125 : 3.02089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbBRCoffeeDataContext/drink/drink_billinfo" />
       <nodes>
         <classShapeMoniker Id="86ee6ad4-f97b-406d-bdd9-00c3644619b2" />
@@ -53,17 +53,17 @@
         <classShapeMoniker Id="86ee6ad4-f97b-406d-bdd9-00c3644619b2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.13544840494792); (3.5 : 2.13544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.13544840494792); (3.5 : 2.13544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbBRCoffeeDataContext/customer/customer_bill" />
       <nodes>
         <classShapeMoniker Id="0301cd72-a4ff-4170-898a-2a3d34fdcedb" />
         <classShapeMoniker Id="7f11ee80-5954-47d5-95ef-e8c4f440de22" />
       </nodes>
     </associationConnector>
-    <classShape Id="34462c5e-0c02-4072-adaf-52329ab3d480" absoluteBounds="7.875, 4, 2, 3.1170068359375">
+    <classShape Id="34462c5e-0c02-4072-adaf-52329ab3d480" absoluteBounds="8.125, 4, 2, 3.1170068359375">
       <DataClassMoniker Name="/dbBRCoffeeDataContext/news" />
       <nestedChildShapes>
-        <elementListCompartment Id="258d1927-99de-47a7-a71b-46a8aed7b72e" absoluteBounds="7.8900000000000006, 4.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="258d1927-99de-47a7-a71b-46a8aed7b72e" absoluteBounds="8.14, 4.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="e9ef7ac9-44bc-4c42-a080-6a03dd68b5d9" absoluteBounds="9.125, 1.25, 2, 1.5785953776041666">

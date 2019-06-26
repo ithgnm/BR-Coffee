@@ -1762,6 +1762,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\SessionCheck.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BRCoffeeController.cs" />
     <Compile Include="Controllers\CartController.cs" />
@@ -1977,6 +1978,14 @@
     <Content Include="Views\Admin\DrinkDelete.cshtml" />
     <Content Include="Views\Admin\DrinkEdit.cshtml" />
     <Content Include="Views\User\UserPartial.cshtml" />
+    <Content Include="Views\Admin\News.cshtml" />
+    <Content Include="Views\Admin\Customer.cshtml" />
+    <Content Include="Views\Admin\NewsCreate.cshtml" />
+    <Content Include="Views\Admin\Order.cshtml" />
+    <Content Include="Views\User\About.cshtml" />
+    <Content Include="Views\Admin\OrderDetails.cshtml" />
+    <Content Include="Views\Admin\Admin.cshtml" />
+    <Content Include="Views\Admin\AccountPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1986,6 +1995,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

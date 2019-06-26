@@ -1,0 +1,61 @@
+﻿@model IEnumerable<brcoffee.Models.billinfo>
+
+@{
+    ViewBag.Title = "OrderDetails";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-3">
+    <h2>Order Details</h2>
+    <hr />
+    <div class="card mb-3">
+        <div class="card-header">
+            <em>ID Bill: <b>@ViewBag.IDBill</b></em>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Drink</th>
+                            <th>Count</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.iddrink)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.count)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.price)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer text-right">
+            <em>Total Price: </em>
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color text-center">
+            <input type="submit" value="@ViewBag.Text" class="btn btn-success my-3" @ViewBag.Disable>
+        </div>
+        <hr>
+        <div>
+            @Html.ActionLink("Back to List", "Order")
+        </div>
+    }
+</div>
+
+

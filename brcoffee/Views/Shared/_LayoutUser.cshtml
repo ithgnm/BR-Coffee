@@ -13,68 +13,73 @@
     <link href="~/Assets/Custom/style.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="@Url.Action("Index", "BRCoffee")">BR Studio & Coffee</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Index", "BRCoffee")">Home</a>
-                    </li>
-                    @Html.Action("CartPartial", "Cart")
-                    @Html.Action("UserPartial", "User")
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div>
-        <div class="container my-3">
-            <div class="row">
-                @RenderBody()
-            </div>
-        </div>
-    </div>
-    <footer>
-        <div id="footer" class="page-footer font-small pt-3 bg-dark information">
-            <div class="container">
-                <div class="row text-center text-md-left">
-                    <div class="col-12 col-md-4 col-lg-5 col-xl-6">
-                        <h5>Information</h5>
-                        <div><strong>BR Studio & Coffee</strong></div>
-                        <div>Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species.</div>
-                        <div>Espresso is coffee of Italian origin, brewed by expressing or forcing a small amount of nearly boiling water under pressure through finely ground coffee beans.</div>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <h5>Profile</h5>
-                        <ul class="list-unstyled quick-links">
-                            <li><i class="fas fa-user-alt"></i> Huy Nguyen Minh</li>
-                            <li><i class="fas fa-fingerprint"></i> 175050002</li>
-                            <li><i class="fas fa-graduation-cap"></i>17D1TH01</li>
-                            <li> <i class="fas fa-envelope"></i> huynm17@uef.edu.vn</li>
-                            <li><i class="fas fa-phone"></i> 0786 768 769</li>
+    <div id="container">
+        <div id="header">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="@Url.Action("Index", "BRCoffee")">BR Studio & Coffee</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto" id="navBar">
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("Index", "BRCoffee")">Home</a>
+                            </li>
+                            @Html.Action("CartPartial", "Cart")
+                            @Html.Action("UserPartial", "User")
                         </ul>
                     </div>
-                    <div class="col-12 col-md-5 col-lg-4 col-xl-3">
-                        <h5 class="d-md-flex d-none">Contact</h5>
-                        <hr class="d-md-flex d-none">
-                        <ul class="list-unstyled list-inline social text-center align-middle">
-                            <li class="list-inline-item"><a href="https://www.facebook.com/ithgnm"><i class="fab fa-facebook-square"></i></a></li>
-                            <li class="list-inline-item"><a href="https://www.instagram.com/ithgnm"><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="mailto:huynm17@uef.edu.vn"><i class="fas fa-envelope"></i></a></li>
-                            <li class="list-inline-item"><a href="https://www.uef.edu.vn"><i class="fas fa-school"></i></a></li>
-                        </ul>
-                        <hr class="d-md-flex d-none">
-                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="content">
+            <div class="container my-3">
+                <div class="row">
+                    @RenderBody()
                 </div>
             </div>
         </div>
-        <div class="page-footer font-small copyright" style="background-color: #202325">
-            <div class="footer-copyright text-center py-2">© 2019 Copyright:</em> <strong style="color: white">Huy Nguyen Minh</strong></div>
+        <div id="footer">
+            <div class="page-footer font-small pt-3 bg-dark information">
+                <div class="container">
+                    <div class="row text-center text-md-left">
+                        <div class="col-12 col-md-4 col-lg-5 col-xl-6">
+                            <h5>Information</h5>
+                            <div><strong>BR Studio & Coffee</strong></div>
+                            <div>Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species.</div>
+                            <div>Espresso is coffee of Italian origin, brewed by expressing or forcing a small amount of nearly boiling water under pressure through finely ground coffee beans.</div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <h5>Profile</h5>
+                            <ul class="list-unstyled quick-links">
+                                <li><i class="fas fa-user-alt"></i> Huy Nguyen Minh</li>
+                                <li><i class="fas fa-fingerprint"></i> 175050002</li>
+                                <li><i class="fas fa-graduation-cap"></i>17D1TH01</li>
+                                <li> <i class="fas fa-envelope"></i> huynm17@uef.edu.vn</li>
+                                <li><i class="fas fa-phone"></i> 0786 768 769</li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-5 col-lg-4 col-xl-3">
+                            <h5 class="d-md-flex d-none">Contact</h5>
+                            <hr class="d-md-flex d-none">
+                            <ul class="list-unstyled list-inline social text-center align-middle">
+                                <li class="list-inline-item"><a href="https://www.facebook.com/ithgnm"><i class="fab fa-facebook-square"></i></a></li>
+                                <li class="list-inline-item"><a href="https://www.instagram.com/ithgnm"><i class="fab fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="mailto:huynm17@uef.edu.vn"><i class="fas fa-envelope"></i></a></li>
+                                <li class="list-inline-item"><a href="https://www.uef.edu.vn"><i class="fas fa-school"></i></a></li>
+                            </ul>
+                            <hr class="d-md-flex d-none">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer font-small copyright" style="background-color: #202325">
+                <div class="footer-copyright text-center py-2"><em>© 2019 Copyright:</em> <strong style="color: white">Huy Nguyen Minh</strong></div>
+            </div>
         </div>
-    </footer>
+    </div>
+    
     <script src="~/Assets/User/vendor/jquery/jquery.min.js"></script>
     <script src="~/Assets/User/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="~/Assets/User/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

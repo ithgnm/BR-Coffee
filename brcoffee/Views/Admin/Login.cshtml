@@ -16,10 +16,13 @@
     <link href="~/Assets/Admin/css/sb-admin.css" rel="stylesheet">
 </head>
 <body>
-    <div class="text-center">
-        <img src="~/Resources/logo.png" width="400">
-    </div>
-    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="@Url.Action("Index", "Admin")">BR Studio & Coffee</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="container" style="margin-top:150px">
         <div class="card card-login mx-auto">
             <div class="card-header">Login</div>
             <div class="card-body">
@@ -38,9 +41,16 @@
                             <label for="inputPassword">Password</label>
                         </div>
                     </div>
-                    <input type="submit" class="btn btn-primary btn-block" value="Login"></input>
+                    <input type="submit" class="btn btn-primary btn-block" value="Login" />
                 }
             </div>
+        </div>
+        <div class="text-center" style="margin-top:100px">
+            <hr />
+            <div class="text-secondary"><em>Huy Nguyen Minh</em></div>
+            <div class="text-secondary"><em>ID & Class: 175050002 - 17D1TH01</em></div>
+            <div class="text-secondary"><em>Leader at Olympiad in Informatics Club</em></div>
+            <div class="text-secondary"><em>Studies at University of Economics & Finance</em></div>
         </div>
     </div>
     <script src="~/Assets/Admin/vendor/jquery/jquery.min.js"></script>

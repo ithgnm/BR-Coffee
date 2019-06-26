@@ -25,29 +25,29 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr class="align-middle">
-                    <td class="text-center align-middle">
-                        <img src="~/Resources/Drink/@item.Picture" class="img-reponsive" width="100">
-                    </td>
-                    <td class="align-middle">
-                        <div scope="row" class="row">
-                            <div class="col">
-                                <h4>@item.Name</h4>
-                                <p>@Truncate(@item.Describe, 100)</p>
-                            </div>
+            <tr class="align-middle">
+                <td class="text-center align-middle">
+                    <img src="~/Resources/Drink/@item.Picture" class="img-reponsive" width="100">
+                </td>
+                <td class="align-middle">
+                    <div scope="row" class="row">
+                        <div class="col">
+                            <h4>@item.Name</h4>
+                            <p>@Truncate(@item.Describe, 100)</p>
                         </div>
-                    </td>
-                    <td class="align-middle" data-th="Quantity">
-                        <input type="text" class="form-control text-center" value="@item.Count">
-                    </td>
-                    <td class="text-center align-middle" data-th="Price">@item.Price đ</td>
-                    <td class="text-center align-middle">
-                        <a href="@Url.Action("DrinkDetail", "BRCoffee", new { id = item.ID })">Detail</a>
-                    </td>
-                    <td class="text-center align-middle">
-                        @Html.ActionLink("Remove", "removeCart", new { @id = item.ID })
-                    </td>
-                </tr>
+                    </div>
+                </td>
+                <td class="align-middle" data-th="Quantity">
+                    <input type="text" class="form-control text-center" value="@item.Count">
+                </td>
+                <td class="text-center align-middle" data-th="Price">@item.Price đ</td>
+                <td class="text-center align-middle">
+                    <a class="btn btn-outline-secondary btn-block" href="@Url.Action("DrinkDetail", "BRCoffee", new { id = item.ID })"><i class="fas fa-info"></i></a>
+                </td>
+                <td class="text-center align-middle">
+                    <a class="btn btn-outline-danger btn-block" href="@Url.Action("removeCart", "Cart", new { id = item.ID })"><i class="fa fa-times"></i></a>
+                </td>
+            </tr>
             }
         </tbody>
         <tfoot>

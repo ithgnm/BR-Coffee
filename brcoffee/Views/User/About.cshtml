@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "BR Studio & Coffee";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col my-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Your Profile</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.ValidationSummary(true)
+                                <div class="form-group row">
+                                    <label for="userName" class="col-3 col-form-label">User Name*</label>
+                                    <div class="col-9">
+                                        <input id="userName" name="userName" value="@Model.username" class="form-control here" required="required" type="text" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="fullName" class="col-3 col-form-label">Full Name</label>
+                                    <div class="col-9">
+                                        <input id="fullName" name="fullName" value="@Model.fullname" class="form-control here" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-3 col-form-label">Email*</label>
+                                    <div class="col-9">
+                                        <input id="email" name="email" value="@Model.email" class="form-control here" required="required" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="address" class="col-3 col-form-label">Address</label>
+                                    <div class="col-9">
+                                        <input id="address" name="address" value="@Model.address" class="form-control here" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="phoneNumber" class="col-3 col-form-label">Phone Number</label>
+                                    <div class="col-9">
+                                        <input id="phoneNumber" name="phoneNumber" value="@Model.phonenumber" class="form-control here" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="bornDate" class="col-3 col-form-label">Date of Birth</label>
+                                    <div class="col-9">
+                                        <input id="bornDate" name="bornDate" value="@Model.borndate" class="form-control here" type="text">
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="form-group row">
+                                    <label for="newpass" class="col-3 col-form-label">Current Password*</label>
+                                    <div class="col-9">
+                                        <input id="current" name="current" placeholder="Current Password" class="form-control here" type="password">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="newpass" class="col-3 col-form-label">New Password*</label>
+                                    <div class="col-9">
+                                        <input id="newpass" name="newpass" placeholder="New Password" class="form-control here" type="password">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="newpass" class="col-3 col-form-label">Confirm*</label>
+                                    <div class="col-9">
+                                        <input id="confirm" name="confirm" placeholder="Confirm" class="form-control here" type="password">
+                                    </div>
+                                </div>
+                                <div class="@ViewBag.alertStyle">@ViewBag.alert</div>
+                                <div class="form-group row">
+                                    <div class="offset-3 col-9 text-center">
+                                        <input type="submit" class="btn btn-primary" value="Update my Profile" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

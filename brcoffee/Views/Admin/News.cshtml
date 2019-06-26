@@ -1,0 +1,87 @@
+﻿@model IEnumerable<brcoffee.Models.news>
+
+@{
+    ViewBag.Title = "BR Studio & Coffee";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length)
+    {@input }
+else
+{ @input.Substring(0, length)<text>...</text>}
+}
+
+<h2>News</h2>
+<div class="card mb-3">
+    <div class="card-header">
+       <em>@Html.ActionLink("Create New", "NewsCreate")</em>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Source</th>
+                        <th>Subtitle</th>
+                        <th>Content</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>Topic</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td class="align-middle">
+                            @Truncate(item.title, 50)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => item.author)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => item.source)
+                        </td>
+                        <td class="align-middle">
+                            @Truncate(item.subtitle, 25)
+                        </td>
+                        <td class="align-middle">
+                            @Truncate(item.content1, 70)
+                        </td>
+                        <td class="align-middle">
+                            <img class="img-responsive" src="@Url.Content("~/Resources/News/" + item.picture1)" width="100">
+                        </td>
+                        <td class="align-middle">
+                            @Truncate(item.content2, 50)
+                        </td>
+                        <td class="align-middle">
+                            <img class="img-responsive" src="@Url.Content("~/Resources/News/" + item.picture2)" width="100">
+                        </td>
+                        <td class="align-middle">
+                            @Truncate(item.content3, 30)
+                        </td>
+                        <td class="align-middle">
+                            <img class="img-responsive" src="@Url.Content("~/Resources/News/" + item.picture3)" width="100">
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => item.topic)
+                        </td>
+                        <td>
+                            <em>@Html.ActionLink("Edit", "NewsEdit", new { id = item.id })</em> |
+                            <em>@Html.ActionLink("Delete", "NewsDelete", new { id = item.id })</em>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

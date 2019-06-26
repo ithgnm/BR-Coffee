@@ -4,13 +4,24 @@
     customer customer = (customer)Session["customer"];
 }
 
-<li class="nav-item">
-    @if (Session["customer"] != null)
-    {
-        <a class="nav-link" href="@Url.Action("Logout", "User")">@ViewBag.fullName</a>
-    }
-    else
-    {
+
+@if (Session["customer"] != null)
+{
+    <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@ViewBag.fullName</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="@Url.Action("About", "User")">About</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="@Url.Action("Logout", "User")">Logout</a>
+        </div>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Register", "User")">Register</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="@Url.Action("Login", "User")">@ViewBag.fullName</a>
-    }
-</li>
+    </li>
+}

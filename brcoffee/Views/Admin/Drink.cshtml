@@ -12,43 +12,54 @@
 }
 
 <h2>Drink</h2>
-<p><em>@Html.ActionLink("Create New", "DrinkCreate")</em></p>
-<table class="table">
-    <tr>
-        <th>Drink</th>
-        <th>Category</th>
-        <th>Image</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Update</th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td class="align-middle">
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td class="align-middle">
-            @Html.DisplayFor(modelItem => item.category.name)
-        </td>
-        <td class="align-middle">
-            <img class="img-responsive" src="@Url.Content("~/Resources/Drink/" + item.picture)" width="100">
-        </td>
-        <td class="align-middle">
-            @Truncate(item.describe, 75)
-        </td>
-        <td class="align-middle">
-            @Html.DisplayFor(modelItem => item.price) đ
-        </td>
-        <td class="align-middle">
-            @Html.DisplayFor(modelItem => item.date)
-        </td>
-        <td class="align-middle">
-            <em>@Html.ActionLink("Edit", "DrinkEdit", new { id = item.id })</em> |
-            <em>@Html.ActionLink("Delete", "DrinkDelete", new { id = item.id })</em>
-        </td>
-    </tr>
-}
-
-</table>
+<div class="card mb-3">
+    <div class="card-header">
+        <em>@Html.ActionLink("Create New", "DrinkCreate")</em>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Update</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.name)
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.category.name)
+                            </td>
+                            <td class="align-middle">
+                                <img class="img-responsive" src="@Url.Content("~/Resources/Drink/" + item.picture)" width="100">
+                            </td>
+                            <td class="align-middle">
+                                @Truncate(item.describe, 75)
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.price) đ
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.date)
+                            </td>
+                            <td class="align-middle">
+                                <em>@Html.ActionLink("Edit", "DrinkEdit", new { id = item.id })</em> |
+                                <em>@Html.ActionLink("Delete", "DrinkDelete", new { id = item.id })</em>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
